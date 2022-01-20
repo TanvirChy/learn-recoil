@@ -62,6 +62,7 @@ function TodoItem({ item }) {
       ...item,
       isComplete: !item.isComplete,
     });
+
     setTodoList(newList);
   };
 
@@ -84,7 +85,7 @@ function TodoItem({ item }) {
 }
 
 function replaceItemAtIndex(arr, index, newValue) {
-  return [...arr.slice(0, index), ...arr.slice(index + 1)];
+  return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)];
 }
 
 function removeItemAtIndex(arr, index) {
